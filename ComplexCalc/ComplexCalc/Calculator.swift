@@ -70,7 +70,7 @@ class Calculator {
     func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
         var result = op(beg, args[0])
         for i in 1...args.count - 1 {
-            result += op(result, args[i])
+            result = op(result, args[i])
         }
         return result
     }
@@ -80,6 +80,6 @@ class Calculator {
     }
     
     func subtract(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
-        return ["x": lhs["x"]! + rhs["x"]!, "y": lhs["y"]! + rhs["y"]!]
+        return ["x": lhs["x"]! - rhs["x"]!, "y": lhs["y"]! - rhs["y"]!]
     }
 }
